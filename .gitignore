@@ -1,0 +1,15 @@
+# SavedVariables and client settings: never commit them
+WTF/
+*.lua.bak
+*.bak
+
+# OS / editors
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc

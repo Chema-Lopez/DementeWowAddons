@@ -1,0 +1,76 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+  <Frame name="STWFrame" movable="true" enableMouse="true" hidden="true" parent="UIParent">
+    <Size x="560" y="360"/>
+    <Anchors>
+      <Anchor point="TOPLEFT"><Offset><AbsDimension x="300" y="-300"/></Offset></Anchor>
+    </Anchors>
+
+    <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background"
+              edgeFile="Interface\DialogFrame\UI-DialogBox-Border" edgeSize="14"
+              tile="true" tileSize="32"/>
+
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture setAllPoints="true"><Color r="0" g="0" b="0" a="0.60"/></Texture>
+      </Layer>
+      <Layer level="ARTWORK">
+        <FontString name="STWHeader" inherits="GameFontHighlightLarge">
+          <Anchors><Anchor point="TOPLEFT"><Offset x="14" y="-10"/></Anchor></Anchors>
+          <Text>STW by Demente</Text>
+        </FontString>
+      </Layer>
+    </Layers>
+
+    <Frames>
+      <EditBox name="STWInput" inherits="InputBoxTemplate" autoFocus="false">
+        <Size x="180" y="24"/>
+        <Anchors><Anchor point="TOPLEFT"><Offset x="14" y="-38"/></Anchor></Anchors>
+      </EditBox>
+
+      <Button name="STWAddBtn" inherits="UIPanelButtonTemplate">
+        <Size x="100" y="24"/>
+        <Anchors>
+          <Anchor point="LEFT" relativeTo="STWInput" relativePoint="RIGHT"><Offset x="8" y="0"/></Anchor>
+        </Anchors>
+        <Text>Add ID</Text>
+        <Scripts>
+          <OnClick>
+            local v=STWInput:GetText()
+            if v and v~="" then SlashCmdList["STW"]("add "..v) end
+            STWInput:SetText("")
+          </OnClick>
+        </Scripts>
+      </Button>
+
+      <ScrollFrame name="STWScroll" inherits="UIPanelScrollFrameTemplate">
+        <Size x="520" y="256"/>
+        <Anchors><Anchor point="TOPLEFT"><Offset x="14" y="-72"/></Anchor></Anchors>
+        <ScrollChild>
+          <SimpleHTML name="STWHTML">
+            <Size x="500" y="244"/>
+            <FontString inherits="GameFontNormal"/>
+            <Scripts>
+              <OnHyperlinkClick> STW_OnHTMLClick(self,link,text,button) </OnHyperlinkClick>
+            </Scripts>
+          </SimpleHTML>
+        </ScrollChild>
+      </ScrollFrame>
+
+      <Button name="STWCloseBtn" inherits="UIPanelCloseButton">
+        <Anchors><Anchor point="TOPRIGHT"><Offset x="-4" y="-4"/></Anchor></Anchors>
+        <Scripts><OnClick> STW_ToggleUI() </OnClick></Scripts>
+      </Button>
+    </Frames>
+
+    <Scripts>
+      <OnShow> STW_DB.ui.shown=true STW_UpdateUI() </OnShow>
+      <OnHide>
+        STW_DB.ui.shown=false
+        local x,y=self:GetLeft(),self:GetBottom()
+        STW_DB.ui.x,STW_DB.ui.y=x,y
+      </OnHide>
+      <OnMouseDown> self:StartMoving() </OnMouseDown>
+      <OnMouseUp> self:StopMovingOrSizing() </OnMouseUp>
+    </Scripts>
+  </Frame>
+</Ui>
