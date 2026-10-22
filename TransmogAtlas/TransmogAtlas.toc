@@ -1,0 +1,26 @@
+## Interface: 120105, 120107
+## Title: TransmogAtlas
+## Notes: Scans the loot of every instance and shows your transmog completion by expansion, instance, difficulty, encounter and class.
+## Notes-esES: Escanea el botín de todas las instancias y muestra tu % de transfiguraciones por expansión, instancia, dificultad, jefe y clase.
+## Author: Demente
+## Version: 0.4.0
+## SavedVariables: TransmogAtlasDB, TransmogAtlasLog
+## IconTexture: Interface\Icons\INV_Chest_Cloth_17
+## AddonCompartmentFunc: TransmogAtlas_OnAddonCompartmentClick
+## AddonCompartmentFuncOnEnter: TransmogAtlas_OnAddonCompartmentEnter
+## AddonCompartmentFuncOnLeave: TransmogAtlas_OnAddonCompartmentLeave
+
+Locale.lua
+Debug.lua
+Runner.lua
+Classes.lua
+Scanner.lua
+Stats.lua
+Lockouts.lua
+Index.lua
+Today.lua
+Overlay.lua
+Notify.lua
+MinimapButton.lua
+UI.lua
+Commands.lua
