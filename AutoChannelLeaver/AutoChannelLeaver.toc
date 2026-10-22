@@ -1,0 +1,9 @@
+## Interface: 120107, 120105, 120100
+## Title: AutoChannelLeaver
+## Notes: Automatically leaves the chat channels you choose (Trade and Services by default) on every character of the account.
+## Notes-esES: Sale automáticamente de los canales que elijas (por defecto Comercio y Servicios) en todos los personajes de la cuenta.
+## Author: Demente
+## Version: 2.0.0
+## IconTexture: Interface\Icons\INV_Misc_Coin_01
+## SavedVariables: AutoChannelLeaverDB
+AutoChannelLeaver.lua
