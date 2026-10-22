@@ -1,0 +1,23 @@
+## Interface: 120105, 120107
+## Title: MountAtlas
+## Notes: Simple Armory–style mount collection: every mount by expansion and source, with filters and how to get it.
+## Notes-esES: Colección de monturas al estilo Simple Armory: todas las monturas por expansión y origen, con filtros y cómo conseguirlas.
+## Author: Demente
+## Version: 0.1.0
+## SavedVariables: MountAtlasDB
+## OptionalDeps: Rarity, TomTom
+## IconTexture: Interface\Icons\Ability_Mount_RidingHorse
+## AddonCompartmentFunc: MountAtlas_OnAddonCompartmentClick
+## AddonCompartmentFuncOnEnter: MountAtlas_OnAddonCompartmentEnter
+## AddonCompartmentFuncOnLeave: MountAtlas_OnAddonCompartmentLeave
+
+Locale.lua
+Data.lua
+Core.lua
+MinimapButton.lua
+Rarity.lua
+Farm.lua
+Weekly.lua
+Notice.lua
+Achievements.lua
+UI.lua
